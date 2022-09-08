@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <external-path
+            name="external_files"
+            path="" />
+        <external-path
+            name="apk"
+            path="cache" />
+        <files-path
+            name="my_images"
+            path="images/" />
+        <files-path
+            name="download"
+            path="download/" />
+        <root-path
+            name="root_path"
+            path="." />
+    </paths>
+</resources>
