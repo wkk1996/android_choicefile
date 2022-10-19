@@ -5,7 +5,13 @@
 2. 从相册选择图片文件
 3. 从相册选择视频文件
 
-# 使用方式
+# 集成
+
+```
+implementation 'io.github.wkkdhr:choiceFile:0.11'
+```
+
+# 使用
 
 ```
         ChoiceFileHelper choiceFileHelper = new ChoiceFileHelper(this);
