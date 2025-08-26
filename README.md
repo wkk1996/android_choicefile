@@ -8,10 +8,23 @@
 # 集成
 
 ```
-implementation 'io.github.wkkdhr:choiceFile:0.11'
+implementation 'io.github.wkkdhr:choiceFile:0.12'
 ```
 
 # 使用
+
+AndroidManifest.xml 中增加配置：
+```
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="你的包名.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_path" />
+        </provider>
+```
 
 ```
         ChoiceFileHelper choiceFileHelper = new ChoiceFileHelper(this);

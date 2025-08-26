@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.library'
+    id 'signing'
+    id 'maven-publish'
 }
-
+def VERSION = "0.12"
 android {
     compileSdk 32
 
@@ -22,6 +24,56 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+afterEvaluate {
+    publishing {
+
+        publications {
+            release(MavenPublication) {
+                groupId = 'io.github.wkkdhr'
+                artifactId = 'choiceFile'
+                version = VERSION
+
+                // 确保正确引用Android组件（Android库必须）
+                from components.release  // 注意：如果是Android库，必须使用这个组件
+                pom {
+                    name = 'choiceFile'
+                    description = 'Android选择文件工具'
+                    url = 'https://github.com/wkkdhr/android_choicefile'
+                    licenses {
+                        license {
+                            name = 'The Apache Software License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'wkk'
+                            name = 'wkk'
+                            email = ossrhEmail
+                        }
+                    }
+                    scm {
+                        connection = 'https://github.com/wkkdhr/android_choicefile.git'
+                        developerConnection = 'https://github.com/wkkdhr/android_choicefile.git'
+                        url = 'https://github.com/wkkdhr/android_choicefile'
+                    }
+                }
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+    signing {
+        sign publishing.publications.release
     }
 }
 
