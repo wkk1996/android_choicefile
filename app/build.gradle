@@ -37,6 +37,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation 'io.github.wkkdhr:choiceFile:0.12'
+    implementation 'io.github.wkk1996:choiceFile:1.0.0'
+
 
 }

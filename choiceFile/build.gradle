@@ -3,7 +3,6 @@ plugins {
     id 'signing'
     id 'maven-publish'
 }
-def VERSION = "0.12"
 android {
     compileSdk 32
 
@@ -37,7 +36,7 @@ afterEvaluate {
 
         publications {
             release(MavenPublication) {
-                groupId = 'io.github.wkkdhr'
+                groupId = 'io.github.wkk1996'
                 artifactId = 'choiceFile'
                 version = VERSION
 
@@ -46,7 +45,7 @@ afterEvaluate {
                 pom {
                     name = 'choiceFile'
                     description = 'Android选择文件工具'
-                    url = 'https://github.com/wkkdhr/android_choicefile'
+                    url = 'https://github.com/wkk1996/android_choicefile'
                     licenses {
                         license {
                             name = 'The Apache Software License, Version 2.0'
@@ -61,9 +60,9 @@ afterEvaluate {
                         }
                     }
                     scm {
-                        connection = 'https://github.com/wkkdhr/android_choicefile.git'
-                        developerConnection = 'https://github.com/wkkdhr/android_choicefile.git'
-                        url = 'https://github.com/wkkdhr/android_choicefile'
+                        connection = 'https://github.com/wkk1996/android_choicefile.git'
+                        developerConnection = 'https://github.com/wkk1996/android_choicefile.git'
+                        url = 'https://github.com/wkk1996/android_choicefile'
                     }
                 }
             }

@@ -8,7 +8,7 @@
 # 集成
 
 ```
-implementation 'io.github.wkkdhr:choiceFile:0.12'
+implementation 'io.github.wkk1996:choiceFile:1.0.0'
 ```
 
 # 使用
